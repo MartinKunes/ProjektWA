@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sneakers API Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Sneakers</h1>
+<div id="sneakers"></div>
+
+<script>
+  $(document).ready(function() {
+    $.ajax({
+      url: 'https://raw.githubusercontent.com/MartinKunes/API-boty/main/sneakers.json',
+      dataType: 'json',
+      success: function(data) {
+        const sneakersContainer = document.getElementById('sneakers');
+        sneakersContainer.innerHTML = '<h2>Sneakers</h2>';
+
+        data.sneakers.forEach(function(sneaker) {
+          const sneakerElement = document.createElement('div');
+          sneakerElement.innerHTML = `
+              <h3>${sneaker.name}</h3>
+              <p>Release Date: ${sneaker.releaseDate}</p>
+              <p>Price: $${sneaker.price}</p>
+            `;
+
+          sneakersContainer.appendChild(sneakerElement);
+        });
+      },
+      error: function() {
+        console.error('Failed to fetch sneakers data.');
+      }
+    });
+  });
+</script>
+</body>
+</html>
