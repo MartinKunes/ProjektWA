@@ -28,31 +28,26 @@ var x = setInterval(function() {
 
 
 
-
 $(document).ready(function() {
     $.ajax({
         url: 'https://raw.githubusercontent.com/MartinKunes/API-boty/main/sneakers.json',
         dataType: 'json',
         success: function(data) {
-            const sneakersContainer = document.getElementById('sneakers');
-            sneakersContainer.innerHTML = '<h2>Sneaker releases</h2>';
-
+            const sneakersContainer = $('#sneakers');
+            sneakersContainer.append('<h2 class="text-light">Sneaker releases</h2>');
             data.sneakers.forEach(function(sneaker) {
-                const sneakerElement = document.createElement('div');
-                sneakerElement.innerHTML = `
-   <div class="col">
-                    <div class="card">
-                <div class="card-body bg-dark">
-              <h3 class="text-light" >${sneaker.name}</h3>
-              <p class="card-text text-light">Release Date: ${sneaker.releaseDate}</p>
-              <p class="card-text text-light">Price: $${sneaker.price}</p>
-                </div>
-                </div>
-                </div>
-            `;
-
-
-                sneakersContainer.appendChild(sneakerElement);
+                const sneakerElement = $('<div class="col"></div>');
+                sneakerElement.html(`
+                        <div class="card ">
+                            <div class="card-body bg-dark w-100" >
+                                <img src="${sneaker.image}" class="img-responsive" height="450px" alt="...">
+                                <h3 class="text-light">${sneaker.name}</h3>
+                                <p class="card-text text-light">Release Date: ${sneaker.releaseDate}</p>
+                                <p class="card-text text-light">Price: $${sneaker.price}</p>
+                            </div>
+                        </div>
+                    `);
+                sneakersContainer.append(sneakerElement);
             });
         },
         error: function() {
@@ -60,3 +55,10 @@ $(document).ready(function() {
         }
     });
 });
+
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown("slow");
+    });
+});
+
