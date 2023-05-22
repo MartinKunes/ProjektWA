@@ -1,8 +1,8 @@
-
-
-
-
 <?php
+session_start();
+
+
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -11,10 +11,12 @@ $con = new mysqli("127.0.0.1", "admin", "admin", "register");
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 } else {
+
     $stmt = $con->prepare("select * from register where email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt_result = $stmt->get_result();
+    $count = mysqli_fetch_array($stmt_result, MYSQLI_NUM);
 
     if ($stmt_result->num_rows > 0) {
 
@@ -23,14 +25,22 @@ if ($con->connect_error) {
 
         if (password_verify($password, $user[2])) {
             //  echo "Login success...";
-            session_start();
+
             $_SESSION["email"] = $user[1];
             header("Location: index.php");
             return;
         } else {
-            echo file_get_contents("header.html");
-            echo "Invalid password...";
-            echo file_get_contents("footer.html");
+            $_SESSION['fail']++;
+            if($_SESSION['fail'] >=3){
+                $myfile = fopen("prihlaseni.txt", "a") or die("Unable to open file!");
+                $txt = "$email\n";
+                fwrite($myfile, $txt);
+                fclose($myfile);
+                session_destroy();
+            }
+            header("Location: login.html");
+            return;
+
         }
     } else {
         echo file_get_contents("header.html");
