@@ -13,8 +13,8 @@ if ($conn->connect_error) {
         $stmt = $conn->prepare("INSERT INTO register (email, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $email,  $hashed_password);
         $stmt->execute();
-        $myfile = fopen("index.html", "r");
-        echo fread($myfile,filesize("index.html"));
+        $myfile = fopen("index.php", "r");
+        echo fread($myfile,filesize("index.php"));
         fclose($myfile);
     } else {
         echo file_get_contents("header.html");

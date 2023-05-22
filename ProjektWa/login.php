@@ -15,13 +15,18 @@ if ($con->connect_error) {
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt_result = $stmt->get_result();
+
     if ($stmt_result->num_rows > 0) {
-        $data = $stmt_result->fetch_assoc();
-        if (password_verify($password, $data['password'])) {
+
+
+        $user = $stmt_result->fetch_all()[0];
+
+        if (password_verify($password, $user[2])) {
             //  echo "Login success...";
-            $myfile = fopen("index.html", "r");
-            echo fread($myfile,filesize("index.html"));
-            fclose($myfile);
+            session_start();
+            $_SESSION["email"] = $user[1];
+            header("Location: index.php");
+            return;
         } else {
             echo file_get_contents("header.html");
             echo "Invalid password...";
