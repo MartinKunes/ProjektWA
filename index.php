@@ -8,7 +8,7 @@ switch ($request) {
         $redirect = '/ProjektWa/index.php';
         break;
     case '/login':
-        $redirect = '/ProjektWa/login.html';
+        $redirect = '/ProjektWa/loginDesign.php';
         break;
     case '/releases':
         $redirect = '/ProjektWa/releases.php';

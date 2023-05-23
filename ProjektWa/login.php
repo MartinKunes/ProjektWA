@@ -16,7 +16,6 @@ if ($con->connect_error) {
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt_result = $stmt->get_result();
-    $count = mysqli_fetch_array($stmt_result, MYSQLI_NUM);
 
     if ($stmt_result->num_rows > 0) {
 
@@ -37,8 +36,9 @@ if ($con->connect_error) {
                 fwrite($myfile, $txt);
                 fclose($myfile);
                 session_destroy();
+
             }
-            header("Location: login.html");
+            header("Location: loginDesign.php");
             return;
 
         }

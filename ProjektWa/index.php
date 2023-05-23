@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,14 +31,14 @@ session_start();
 </head>
 <body>
 
-<br><br><br><br>
-<br><br><br><br>
+
+<br><br><br>
 <?php
 
 		if(isset($_SESSION["email"])){
-            echo "Logged as " . $_SESSION['email'];
+            echo '<h3>Logged as '. $_SESSION['email'].'</h3>';
 		} else {
-			echo "You are not logged in";
+            echo '<h3>Not logged dude </h3>';
 		}
 	?>
 <header>
@@ -64,29 +61,36 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link " href="releases.php">Releases</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Absence</a>
-                    </li>
+                    <?php if(!isset($_SESSION["email"])){
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="loginDesign.php">Přihlásit</a>
+                        </li>"';
+                    }else {
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="logout.php">Odhlásit</a>
+                       </li>"';
 
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<br>
-<br>
-<br>
-<br>
-
 
 <div class="container">
 <center>
-    <p id="demo"></p>
+    <h1 id="demo"></h1>
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
             <img src="img/img1.png" class="d-block  w-50" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <div id="flip">
+                    <button type="button"class="btn btn-light">   <h1>New Collab between Nike and Travis Scott</h1></button>
+                </div>
+            </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
             <img src="img/img2.png" class="d-block  w-50" alt="...">
@@ -105,9 +109,6 @@ session_start();
     </button>
 </div>
 
-    <div id="flip">
-    <button type="button"class="btn btn-light">   <h1>New Collab between Nike and Travis Scott</h1></button>
-</div>
 </center>
     <div id="panel">
     <p>V dnešní době kolaborace mezi hudebními umělci a značkami jsou stále běžnější a přinášejí svěží pohled na svět módy a kultury. Jedním z nejvýraznějších spojení mezi světem hudby a sportovního průmyslu je spolupráce mezi značkou Nike a hudebním umělcem Travisem Scottem. Tato spolupráce představuje spojení dvou kreativních sil, které vytváří nové trendy a inovativní produkty. V tomto článku se podíváme na to, jaké jsou hlavní informace ohledně kolaborace mezi Nike a Travisem Scottem a jaký dopad měla na svět módy a hudby.

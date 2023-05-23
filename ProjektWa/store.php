@@ -38,15 +38,25 @@ if(isset($_SESSION["email"])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link"  href="index.php">Hlavní stránka</a>
+                        <a class="nav-link active" aria-current="page" href="#">Hlavní stránka</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="store.html">Store</a>
+                        <a class="nav-link" href="store.php">Store</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="releases.php">Releases</a>
                     </li>
+                    <?php if(!isset($_SESSION["email"])){
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="loginDesign.php">Přihlásit</a>
+                        </li>"';
+                    }else {
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="logout.php">Odhlásit</a>
+                       </li>"';
 
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
