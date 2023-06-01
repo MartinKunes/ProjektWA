@@ -1,6 +1,6 @@
 <?php
-echo file_get_contents("header.html");
-echo file_get_contents("footer.html");
+echo file_get_contents("header.php");
+echo file_get_contents("footer.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

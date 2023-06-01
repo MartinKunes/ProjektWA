@@ -40,10 +40,11 @@ $(document).ready(function() {
                 sneakerElement.html(`
                         <div class="card ">
                             <div class="card-body bg-dark w-100" >
-                                <img src="${sneaker.image}" class="img-responsive" height="450px" alt="...">
-                                <h3 class="text-light">${sneaker.name}</h3>
+                                <img src="${sneaker.image}" class="img-fluid" height="450px" alt="...">
+                                <h3 class="text-light" >${sneaker.name}</h3>
                                 <p class="card-text text-light">Release Date: ${sneaker.releaseDate}</p>
                                 <p class="card-text text-light">Price: $${sneaker.price}</p>
+                                 
                             </div>
                         </div>
                     `);
@@ -61,4 +62,17 @@ $(document).ready(function(){
         $("#panel").slideDown("slow");
     });
 });
+
+window.onload = function() {
+    document.getElementById('BuyForm').addEventListener('submit', function () {
+        // Get the value of the name field.
+        let name = document.getElementById("name").value;
+
+
+        // Save the name in localStorage.
+        localStorage.setItem('name', name);
+
+    });
+}
+
 

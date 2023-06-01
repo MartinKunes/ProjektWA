@@ -25,7 +25,7 @@ if(isset($_SESSION["email"])){
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
-<body >
+<body>
 
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
@@ -39,7 +39,7 @@ if(isset($_SESSION["email"])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Hlavní stránka</a>
+                        <a class="nav-link active" aria-current="page" href="#">Hlavní stránka</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="store.php">Store</a>
@@ -63,38 +63,74 @@ if(isset($_SESSION["email"])){
         </div>
     </nav>
 </header>
-
-<main class="bg-secondary">
 <br>
 <br>
 <br>
 <br>
 
+<div class="container d-flex align-items-center justify-content-center"">
 
+    <h1>In your cart</h1>
 
+<script>
+  // Retrieve data from localStorage
+  const cartData = localStorage.getItem('cart');
+  const data = cartData ? JSON.parse(cartData) : [];
 
-    <div class="mt-2  row row-cols-2 row-cols-sm-2 row-cols-md-2 g-4 text-center justify-content-center  ">
-        <div class="container">
-        <div id="sneakers"></div>
+  // Create a table element
+  const table = document.createElement('table');
 
+  // Create table header row
+  const headerRow = document.createElement('tr');
+  const nameHeader = document.createElement('th');
+  const imageHeader = document.createElement('th');
+  const releaseDateHeader = document.createElement('th');
+  const priceHeader = document.createElement('th');
+  imageHeader.textContent = 'Image';
+  nameHeader.textContent = 'Name';
+  releaseDateHeader.textContent = 'Release Date';
+  priceHeader.textContent = 'Price';
+  headerRow.appendChild(imageHeader);
+  headerRow.appendChild(nameHeader);
+  headerRow.appendChild(releaseDateHeader);
+  headerRow.appendChild(priceHeader);
+  table.appendChild(headerRow);
 
-    </div>
-    </div>
+  // Iterate over the data and create rows and columns for each item
+  data.forEach(item => {
+    // Create a table row element
 
+    const row = document.createElement('tr');
 
+    // Create table data cells for each item detail
+      const image = document.createElement('img');
+      image.src = item.image;
 
-<br>
-<br>
-<br>
-<br>
-</main>
-<footer class="bg-info text-center text-lg-start fixed-bottom">
-    <div class="text-center p-3" style="background-color: rgb(80,80,80);">
-        <a class="text-light" href="https://github.com/MartinKunes">    ©Martin Kuneš 2023</a>
-    </div>
-</footer>
+      const nameCell = document.createElement('td');
+    const releaseDateCell = document.createElement('td');
+    const priceCell = document.createElement('td');
 
-<script src="script.js"></script>
+    // Set the text content of each cell
+    image.iContent = item.image;
+    nameCell.textContent = item.name;
+    releaseDateCell.textContent = item.releaseDate;
+    priceCell.textContent = item.price;
 
+    // Append the cells to the row
+    row.appendChild(image);
+    row.appendChild(nameCell);
+    row.appendChild(releaseDateCell);
+    row.appendChild(priceCell);
+
+    // Append the row to the table
+    table.appendChild(row);
+  });
+
+  // Append the table to the document body or any other container element
+  document.body.appendChild(table);
+
+</script>
+
+</div>
 </body>
 </html>

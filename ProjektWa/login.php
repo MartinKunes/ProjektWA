@@ -43,9 +43,9 @@ if ($con->connect_error) {
 
         }
     } else {
-        echo file_get_contents("header.html");
+        echo file_get_contents("header.php");
         echo "Invalid email...";
-        echo file_get_contents("footer.html");
+        echo file_get_contents("footer.php");
     }
 }
 ?>

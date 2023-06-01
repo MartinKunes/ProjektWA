@@ -9,7 +9,6 @@ if(isset($_SESSION["email"])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<>
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,10 +37,10 @@ if(isset($_SESSION["email"])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Hlavní stránka</a>
+                        <a class="nav-link" aria-current="page" href="#">Hlavní stránka</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="store.php">Store</a>
+                        <a class="nav-link active" href="store.php">Store</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="releases.php">Releases</a>
@@ -76,65 +75,70 @@ if(isset($_SESSION["email"])){
     <div class="container-md mt-4 card text-light bg-secondary">
         <h1 class="mt-5 mx-5">Around the globe</h1>
         <p class="mt-2 mx-5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius</p>
-        <button type="button" class="btn btn-primary d-flex col-2 justify-content-center mt-2 mx-5 mb-5">Klikni sem</button>
     </div>
+
 
     <div class="mt-4 row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4 text-center justify-content-center  ">
         <div class="col">
             <div class="card">
-                <img src="img/img1.png" class="img-responsive "
+                <img src="img/img1.png" class="img-fluid"
                      alt="uno" height="300px" />
                 <div class="card-body bg-dark">
-                    <h5 class="card-title text-light">Jordan 4</h5>
+                    <form id="BuyForm" >
+                    <h5 class="card-title text-light" for="name" type="text" name="name"  id="name" value="Jordan 4">Jordan 4</h5>
+                    <h5 class="card-title text-light" name="price" value="90" id="price">90</h5>
                     <p class="card-text text-light">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
                     </p>
-                    <a href="#" class="btn btn-light">Klikni sem</a>
+                    <input type="submit" value="send">
                 </div>
             </div>
         </div>
-
+    </form>
 
 
 
         <div class="col">
             <div class="card">
-                <img src="img/img2.png" class="img-responsive "
+                <img src="img/img2.png" class="img-fluid"
                      alt="duo" height="300px" />
                 <div class="card-body bg-dark">
-                    <h5 class="card-title text-light">Air Jordan 1 Retro High</h5>
+                    <h5 class="card-title text-light" id="name">Air Jordan 1 Retro High</h5>
+                    <h5 class="card-title text-light" id="price">90</h5>
                     <p class="card-text text-light">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
                     </p>
-                    <a href="#" class="btn btn-light">Klikni sem</a>
+                    <a href="#" class="btn btn-light"  id="submit">Klikni sem</a>
                 </div>
             </div>
         </div>
 
         <div class="col">
             <div class="card">
-                <img src="img/img03.png" class="img-responsive "
+                <img src="img/img03.png" class="img-fluid"
                      alt="trees " height="300px" />
 
                 <div class="card-body bg-dark">
-                    <h5 class="card-title text-light">Air Jordan 1 Retro Low</h5>
+                    <h5 class="card-title text-light" id="name">Air Jordan 1 Retro Low</h5>
+                    <h5 class="card-title text-light" id="price">90</h5>
                     <p class="card-text text-light">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
                     </p>
-                    <a href="#" class="btn btn-light ">Klikni sem</a>
+                    <a href="#" class="btn btn-light " type="submit">Klikni sem</a>
                 </div>
             </div>
         </div>
 
         <div class="col">
             <div class="card">
-                <img src="img/img04.png" class="img-responsive" alt="quatro" height="300px"    />
+                <img src="img/img04.png" class="img-fluid" alt="quatro" height="300px"    />
                 <div class="card-body bg-dark">
                     <h5 class="card-title text-light">Air Jordan 1 Retro Low</h5>
+                    <h5 class="card-title text-light" id="price">90</h5>
                     <p class="card-text text-light">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
                     </p>
-                    <a href="#" class="btn btn-light">Klikni sem</a>
+                    <a href="#" class="btn btn-light" id="submit">Klikni sem</a>
                 </div>
             </div>
         </div>
@@ -153,5 +157,6 @@ if(isset($_SESSION["email"])){
 <br>
 
 
+<script src="script1.js"></script>
 </body>
 </html>
