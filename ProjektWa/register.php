@@ -17,9 +17,9 @@ if ($conn->connect_error) {
         echo fread($myfile,filesize("index.php"));
         fclose($myfile);
     } else {
-        echo file_get_contents("header.html");
+        echo file_get_contents("header.php");
         echo "Invalid password...";
-        echo file_get_contents("footer.html");
+        echo file_get_contents("footer.php");
     }
 
 
