@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 if(isset($_SESSION["email"])){
     echo "Logged as " . $_SESSION['email'];
 } else {
@@ -16,17 +14,11 @@ if(isset($_SESSION["email"])){
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-
-
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
-<body >
-
+<body>
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
         <div class="container">
@@ -39,13 +31,13 @@ if(isset($_SESSION["email"])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Hlavní stránka</a>
+                        <a class="nav-link "  href="index.php">Hlavní stránka</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="store.php">Store</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="releases.php">Releases</a>
+                        <a class="nav-link active"aria-current="page" href="releases.php">Releases</a>
                     </li>
                     <?php if(!isset($_SESSION["email"])){
                         echo '"<li class="nav-item">
@@ -54,8 +46,10 @@ if(isset($_SESSION["email"])){
                     }else {
                         echo '"<li class="nav-item">
                       <a class="nav-link" href="logout.php">Odhlásit</a>
+                       </li>
+                       <li class="nav-item">
+                      <a class="nav-link active" > '.$_SESSION['email'].'</a>
                        </li>"';
-
                     }
                     ?>
                 </ul>
@@ -64,20 +58,15 @@ if(isset($_SESSION["email"])){
     </nav>
 </header>
 
-<main class="bg-secondary">
+<main>
 <br>
 <br>
 <br>
 <br>
-
-
-
-
-    <div class="mt-2  row row-cols-2 row-cols-sm-2 row-cols-md-2 g-4 text-center justify-content-center  ">
-        <div class="container">
+    <div class="container">
+        <div class="mt-4 row row-cols-1 row-cols-sm-1 row-cols-md-1 g-4 text-center justify-content-center  ">
         <div id="sneakers"></div>
-
-
+    </div>
     </div>
     </div>
 

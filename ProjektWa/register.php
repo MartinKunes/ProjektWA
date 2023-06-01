@@ -1,4 +1,5 @@
 <?php
+session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
 $password1 = $_POST['password1'];
@@ -14,8 +15,8 @@ if ($conn->connect_error) {
         $stmt->bind_param("ss", $email,  $hashed_password);
         $stmt->execute();
         $myfile = fopen("index.php", "r");
-        echo fread($myfile,filesize("index.php"));
-        fclose($myfile);
+        header("Location: loginDesign.php");
+        return;
     } else {
         echo file_get_contents("header.php");
         echo "Invalid password...";
