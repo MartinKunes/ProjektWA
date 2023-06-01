@@ -28,9 +28,7 @@ if(isset($_SESSION["email"])){
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <h3>MK Sneakers</h3>
-            </a>
+            <img src="img/logo4.png" alt="" width="180" height="40" class="d-inline-block align-text-top">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +38,10 @@ if(isset($_SESSION["email"])){
                         <a class="nav-link "  href="index.php">Hlavní stránka</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="store.php">Store</a>
+                        <a class="nav-link active"  aria-current="page" href="store.php">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="releases.php">Releases</a>
@@ -48,7 +49,9 @@ if(isset($_SESSION["email"])){
                     <?php if(!isset($_SESSION["email"])){
                         echo '"<li class="nav-item">
                       <a class="nav-link" href="loginDesign.php">Přihlásit</a>
-                        </li>"';
+                        </li><li class="nav-item">
+                      <a class="nav-link active" >Not logged in</a>
+                       </li>"';
                     }else {
                         echo '"<li class="nav-item">
                       <a class="nav-link" href="logout.php">Odhlásit</a>

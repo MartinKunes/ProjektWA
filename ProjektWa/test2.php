@@ -30,6 +30,45 @@ if(isset($_SESSION["email"])){
 
 </head>
 
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
+        <div class="container">
+            <img src="img/logo4.png" alt="" width="180" height="40" class="d-inline-block align-text-top">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Hlavní stránka</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="store.php">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="releases.php">Releases</a>
+                    </li>
+                    <?php if(!isset($_SESSION["email"])){
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="loginDesign.php">Přihlásit</a>
+                        </li><li class="nav-item">
+                      <a class="nav-link active" >Not logged in</a>
+                       </li>"';
+                    }else {
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="logout.php">Odhlásit</a>
+                       </li>
+                       <li class="nav-item">
+                      <a class="nav-link active" > '.$_SESSION['email'].'</a>
+                       </li>"';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <body>
 
 <header>

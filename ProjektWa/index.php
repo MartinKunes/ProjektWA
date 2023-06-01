@@ -39,6 +39,9 @@ session_start();
                         <a class="nav-link" href="store.php">Store</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="cart.php">Cart</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " href="releases.php">Releases</a>
                     </li>
                     <?php if(!isset($_SESSION["email"])){

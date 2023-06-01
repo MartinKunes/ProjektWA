@@ -24,9 +24,9 @@ if(isset($_SESSION["email"])){
                 <div class="card bg-white">
                     <div class="card-body p-5">
 
-                        <h2 class="fw-bold mb-2 text-uppercase ">MK SNEakers</h2>
-                        <p class=" mb-5">Pro přihlášení vyplňte svůj e-mail a heslo</p>
+                        <img src="img/logo4.png" alt="" width="180" height="40" class="d-inline-block align-text-top">
                         <div class="card-body">
+                            <p class=" mb-5">Pro přihlášení vyplňte svůj e-mail a heslo</p>
                             <form action="login.php" method="post">
                                 <div class="mb-3">
                                     <label for="email">Email</label>
