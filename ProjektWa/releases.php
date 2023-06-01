@@ -67,11 +67,11 @@ if(isset($_SESSION["email"])){
 <br>
 <br>
     <div class="container">
-        <div class="mt-4 row row-cols-1 row-cols-sm-1 row-cols-md-1 g-4 text-center justify-content-center  ">
-        <div id="sneakers"></div>
+        <div id="sneakers" class="mt-4 row row-cols-2 row-cols-sm-2 row-cols-md-2 g-4 text-center justify-content-center  ">
+
     </div>
     </div>
-    </div>
+
 
 
 

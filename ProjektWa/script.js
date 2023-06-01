@@ -34,7 +34,6 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data) {
             const sneakersContainer = $('#sneakers');
-            sneakersContainer.append('<h2 class="text-light">Sneaker releases</h2>');
             data.sneakers.forEach(function(sneaker) {
                 const sneakerElement = $('<div class="col"></div>');
                 sneakerElement.html(`
