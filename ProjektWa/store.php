@@ -19,9 +19,6 @@ if(isset($_SESSION["email"])){
 
 
 </script>
-
-
-
         </head>
 <body>
 
@@ -68,6 +65,15 @@ if(isset($_SESSION["email"])){
 </header>
 
 <main>
+<br>
+
+
+    <div class="container-md mt-4 card text-light bg-secondary">
+        <h1 class="mt-5 mx-5">Exclusive access</h1>
+        <p class="mt-2 mx-5"> Pro naše členy jsme si připravili exkluzivní přístup k limitovaným botám. Boty se mění podle plnosti skladu a na každého je jeden pár bot. </p>
+    </div>
+
+
 
     <div class="container">
 

@@ -81,6 +81,7 @@ if(isset($_SESSION["email"])){
 
     </div>
 
+
     <script>
         // Retrieve data from localStorage
         const cartData = localStorage.getItem('cart');
@@ -128,12 +129,30 @@ if(isset($_SESSION["email"])){
             card.appendChild(cardBody);
             cardContainer.appendChild(card);
         });
-
+        let price = document.createElement("p");
+        price.classList.add("card-text");
         // Append the table to the document body or any other container element
-
-
+        let row = document.createElement("div");
+        row.classList.add("container");
+        price.textContent = "Price: $" + sneaker.price;
+        row.appendChild(price);
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#p1").mouseleave(function(){
+                alert("Neutratil jsi dostatek");
+            });
+        });
+    </script>
 
-</body>
+<br>
+
+    <div class="d-grid gap-2 col-3 mx-auto">
+    <button id="p1" class="btn btn-primary ">Dokončit objednávku</button>
+</div>
+</div>
+
+    </body>
 </html>

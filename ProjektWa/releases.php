@@ -65,8 +65,10 @@ if(isset($_SESSION["email"])){
 <br>
 <br>
 <br>
-<br>
+
+
     <div class="container">
+        <h3 class="secondary text-center justify-content-center ">Upcoming releases</h3>
         <div id="sneakers" class="mt-4 row row-cols-2 row-cols-sm-2 row-cols-md-2 g-4 text-center justify-content-center  ">
 
     </div>

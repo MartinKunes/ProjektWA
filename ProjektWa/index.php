@@ -22,7 +22,6 @@ session_start();
     }</Style>
 </head>
 <body>
-
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
         <div class="container">
@@ -64,11 +63,8 @@ session_start();
         </div>
     </nav>
 </header>
-
-
 <div class="container d-line text-center align-items-center justify-content-center">
     <br><br><br>
-
 <br>
     <h3>Until next release</h3>
     <h3 id="demo"></h3>
@@ -100,11 +96,9 @@ session_start();
     </div>
 </div>
 <div class="container">
-
     <div id="panel">
     <p>V dnešní době kolaborace mezi hudebními umělci a značkami jsou stále běžnější a přinášejí svěží pohled na svět módy a kultury. Jedním z nejvýraznějších spojení mezi světem hudby a sportovního průmyslu je spolupráce mezi značkou Nike a hudebním umělcem Travisem Scottem. Tato spolupráce představuje spojení dvou kreativních sil, které vytváří nové trendy a inovativní produkty. V tomto článku se podíváme na to, jaké jsou hlavní informace ohledně kolaborace mezi Nike a Travisem Scottem a jaký dopad měla na svět módy a hudby.
 </p>
-
    <h3>Vznik kolaborace:</h3>
     <p>    Kolaborace mezi Travisem Scottem a Nike vznikla v roce 2017, kdy Travis Scott podepsal smlouvu se značkou. Scott se stal součástí elitního týmu Nike, který tvoří vybraní umělci a sportovci. Spolupráce byla založena na vzájemném respektu mezi oběma stranami a jejich snaze přinášet inovativní designy a produkty na trh.
 </p>
@@ -113,7 +107,6 @@ session_start();
 </p>
       <h3>Výsledky spolupráce:</h3>
       <p>  Spolupráce mezi Nike a Travisem Scottem přinesla na trh několik vysoce oceňovaných a populárních produktů. Jedním z nejznámějších jsou tenisky Air Jordan 1 Retro High Travis Scott, které se staly velkým hitem mezi sneakerheady. Tyto tenisky obsahují unikátní designové prvky, včetně reverzibilního Swooshe, které umožňuje nositelskému přizpůsobit vzhled bot dle svého vkusu.</p>
-
 </div>
 </div>
 </div>
@@ -121,14 +114,11 @@ session_start();
 <br>
 <br>
 <br>
-
 <footer class="bg-info text-center text-lg-start fixed-bottom">
     <div class="text-center p-3" style="background-color: rgb(80,80,80);">
         <a class="text-light" href="https://github.com/MartinKunes">    ©Martin Kuneš 2023</a>
     </div>
 </footer>
-
 <script src="script.js"></script>
-
 </body>
 </html>
