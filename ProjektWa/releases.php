@@ -1,11 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION["email"])){
-    echo "Logged as " . $_SESSION['email'];
-} else {
-    header("Location: 404.php");
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,9 +67,6 @@ if(isset($_SESSION["email"])){
 
     </div>
     </div>
-
-
-
 
 <br>
 <br>

@@ -13,7 +13,6 @@ echo file_get_contents("footer.php");
             text-align: center;
         }
     </style>
-
 </head>
 <body>
 <div class="container">

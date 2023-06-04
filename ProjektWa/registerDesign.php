@@ -35,7 +35,7 @@
                                 <input type="submit" class="btn btn-primary w-100" value="Register" name="">
                             </form>
                         </div>
-                        <p class="text-center">Are you a member? <a data-toggle="tab" href="loginDesign.php">Log In</a></p>
+                        <p class="text-center">Jsi již členem? <a data-toggle="tab" href="loginDesign.php">Log In</a></p>
                     </div>
                 </div>
             </div>

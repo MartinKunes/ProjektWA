@@ -16,12 +16,9 @@ if(isset($_SESSION["email"])){
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-
-
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -69,27 +66,23 @@ if(isset($_SESSION["email"])){
 
 <body>
 
-
 <br>
 <br>
 <br>
 <br>
-
-<div class="container">
+    <div class="container-md mt-4 card text-light bg-secondary">
+        <h1 class="mt-5 mx-5">Doručení:</h1>
+        <p class="mt-2 mx-5"> Dopravu nad 300$ platíme my. Jinak si ji platíte sami a na dobírku neposíláme. Bohužel nejsou peníze.</p>
+    </div>
+<div class="container text-center justify-content-center">
+    <br>
     <h1>In your cart</h1>
     <div class="mt-4 row row-cols-2 row-cols-sm-2 row-cols-md-4 g-4 text-center justify-content-center "  id="cardContainer">
-
     </div>
-
-
     <script>
-        // Retrieve data from localStorage
         const cartData = localStorage.getItem('cart');
         const data = cartData ? JSON.parse(cartData) : [];
 
-
-
-        // Iterate over the data and create rows and columns for each item
         data.forEach(sneaker => {
             let row = document.createElement("div");
             row.classList.add("row");
@@ -102,8 +95,8 @@ if(isset($_SESSION["email"])){
 
 
             let image = document.createElement("img");
-            image.classList.add("card-img-top");    // Add the class for the image position
-            image.src = sneaker.image;    // Set the source URL of the image
+            image.classList.add("card-img-top");
+            image.src = sneaker.image;
             card.appendChild(image);
 
             let cardBody = document.createElement("div");
@@ -131,28 +124,28 @@ if(isset($_SESSION["email"])){
         });
         let price = document.createElement("p");
         price.classList.add("card-text");
-        // Append the table to the document body or any other container element
+
         let row = document.createElement("div");
         row.classList.add("container");
         price.textContent = "Price: $" + sneaker.price;
         row.appendChild(price);
-    </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
         $(document).ready(function(){
             $("#p1").mouseleave(function(){
                 alert("Neutratil jsi dostatek");
             });
         });
     </script>
-
 <br>
-
+    <br>
     <div class="d-grid gap-2 col-3 mx-auto">
-    <button id="p1" class="btn btn-primary ">Dokončit objednávku</button>
+        <button id="p1" class="btn btn-primary ">Dokončit objednávku</button>
+    </div>
 </div>
-</div>
-
+<footer class="bg-info text-center text-lg-start fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgb(80,80,80);">
+        <a class="text-light" href="https://github.com/MartinKunes">    ©Martin Kuneš 2023</a>
+    </div>
+</footer>
     </body>
 </html>

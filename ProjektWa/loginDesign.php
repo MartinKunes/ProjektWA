@@ -37,11 +37,9 @@ if(isset($_SESSION["email"])){
                                     <input type="password" id="password" class="form-control" name="password" />
                                 </div>
                                 <input type="submit" class="btn btn-primary w-100" value="Login" name="">
-
                             </form>
-
                         </div>
-                        <p class="text-center">Not a member? <a data-toggle="tab" href="registerDesign.php">Sign Up</a></p>
+                        <p class="text-center">Nejsi členem? <a data-toggle="tab" href="registerDesign.php">Sign Up</a></p>
                     </div>
                 </div>
             </div>

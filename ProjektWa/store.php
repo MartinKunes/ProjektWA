@@ -4,7 +4,6 @@ if(isset($_SESSION["email"])){
     echo "Logged as " . $_SESSION['email'];
 } else {
     header("Location: 404.php");
-
 }
 ?>
 <!DOCTYPE html>
@@ -13,15 +12,10 @@ if(isset($_SESSION["email"])){
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-
-
 </script>
-        </head>
+    </head>
 <body>
-
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
         <div class="container">
@@ -63,29 +57,18 @@ if(isset($_SESSION["email"])){
         </div>
     </nav>
 </header>
-
 <main>
 <br>
-
-
     <div class="container-md mt-4 card text-light bg-secondary">
         <h1 class="mt-5 mx-5">Exclusive access</h1>
         <p class="mt-2 mx-5"> Pro naše členy jsme si připravili exkluzivní přístup k limitovaným botám. Boty se mění podle plnosti skladu a na každého je jeden pár bot. </p>
     </div>
-
-
-
     <div class="container">
 
         <div class="mt-2 row row-cols-1 row-cols-sm-2 row-cols-md-2 g-5 text-center justify-content-center" id="sneakerCardContainer" ></div>
     </div>
 
-
-    <!-- Add Bootstrap JS at the end of the body tag -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-
-
 
         fetch("products.json")
             .then(function(response) {
@@ -99,13 +82,12 @@ if(isset($_SESSION["email"])){
                 displaySneakers(data);
             });
 
-        // SETTING GLOBAL VARIABLES SO WE CAN ACCESS THEM FROM INSIDE THE FUNCTIONS.
         let products = JSON.parse(localStorage.getItem("products"));
         let cart = JSON.parse(localStorage.getItem("cart"));
 
         function displaySneakers(data) {
             let cardContainer = document.getElementById("sneakerCardContainer");
-            cardContainer.innerHTML = ""; // Clear the card container before populating with data
+            cardContainer.innerHTML = "";
 
             data.forEach(function(sneaker) {
 
@@ -120,8 +102,8 @@ if(isset($_SESSION["email"])){
 
 
                 let image = document.createElement("img");
-                image.classList.add("card-img-top"); // Add the class for the image position
-                image.src = sneaker.image; // Set the source URL of the image
+                image.classList.add("card-img-top");
+                image.src = sneaker.image;
                 card.appendChild(image);
 
                 let cardBody = document.createElement("div");
@@ -172,19 +154,14 @@ if(isset($_SESSION["email"])){
         }
     </script>
 </main>
-
 <footer class="bg-info text-center text-lg-start fixed-bottom">
     <div class="text-center p-3" style="background-color: rgb(80,80,80);">
         <a class="text-light" href="https://github.com/MartinKunes">    ©Martin Kuneš 2023</a>
     </div>
 </footer>
-
-
 <br>
 <br>
 <br>
 
-
-<script src="script1.js"></script>
 </body>
 </html>
