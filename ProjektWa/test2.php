@@ -24,7 +24,51 @@ if(isset($_SESSION["email"])){
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    
+
+
+
 </head>
+
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark static-top">
+        <div class="container">
+            <img src="img/logo4.png" alt="" width="180" height="40" class="d-inline-block align-text-top">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Hlavní stránka</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="store.php">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="releases.php">Releases</a>
+                    </li>
+                    <?php if(!isset($_SESSION["email"])){
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="loginDesign.php">Přihlásit</a>
+                        </li><li class="nav-item">
+                      <a class="nav-link active" >Not logged in</a>
+                       </li>"';
+                    }else {
+                        echo '"<li class="nav-item">
+                      <a class="nav-link" href="logout.php">Odhlásit</a>
+                       </li>
+                       <li class="nav-item">
+                      <a class="nav-link active" > '.$_SESSION['email'].'</a>
+                       </li>"';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <body>
 
 <header>
@@ -68,69 +112,67 @@ if(isset($_SESSION["email"])){
 <br>
 <br>
 
-<div class="container d-flex align-items-center justify-content-center"">
 
+
+<div class="container">
     <h1>In your cart</h1>
+<div class="mt-4 row row-cols-2 row-cols-sm-2 row-cols-md-4 g-4 text-center justify-content-center "  id="cardContainer">
+
+</div>
 
 <script>
-  // Retrieve data from localStorage
-  const cartData = localStorage.getItem('cart');
-  const data = cartData ? JSON.parse(cartData) : [];
+    // Retrieve data from localStorage
+    const cartData = localStorage.getItem('cart');
+    const data = cartData ? JSON.parse(cartData) : [];
 
-  // Create a table element
-  const table = document.createElement('table');
 
-  // Create table header row
-  const headerRow = document.createElement('tr');
-  const nameHeader = document.createElement('th');
-  const imageHeader = document.createElement('th');
-  const releaseDateHeader = document.createElement('th');
-  const priceHeader = document.createElement('th');
-  imageHeader.textContent = 'Image';
-  nameHeader.textContent = 'Name';
-  releaseDateHeader.textContent = 'Release Date';
-  priceHeader.textContent = 'Price';
-  headerRow.appendChild(imageHeader);
-  headerRow.appendChild(nameHeader);
-  headerRow.appendChild(releaseDateHeader);
-  headerRow.appendChild(priceHeader);
-  table.appendChild(headerRow);
 
-  // Iterate over the data and create rows and columns for each item
-  data.forEach(item => {
-    // Create a table row element
+    // Iterate over the data and create rows and columns for each item
+    data.forEach(sneaker => {
+        let row = document.createElement("div");
+        row.classList.add("row");
 
-    const row = document.createElement('tr');
+        let cardCol = document.createElement("div");
+        cardCol.classList.add("col");
 
-    // Create table data cells for each item detail
-      const image = document.createElement('img');
-      image.src = item.image;
+        let card = document.createElement("div");
+        card.classList.add("card");
 
-      const nameCell = document.createElement('td');
-    const releaseDateCell = document.createElement('td');
-    const priceCell = document.createElement('td');
 
-    // Set the text content of each cell
-    image.iContent = item.image;
-    nameCell.textContent = item.name;
-    releaseDateCell.textContent = item.releaseDate;
-    priceCell.textContent = item.price;
+        let image = document.createElement("img");
+        image.classList.add("card-img-top");    // Add the class for the image position
+        image.src = sneaker.image;    // Set the source URL of the image
+        card.appendChild(image);
 
-    // Append the cells to the row
-    row.appendChild(image);
-    row.appendChild(nameCell);
-    row.appendChild(releaseDateCell);
-    row.appendChild(priceCell);
+        let cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-    // Append the row to the table
-    table.appendChild(row);
-  });
 
-  // Append the table to the document body or any other container element
-  document.body.appendChild(table);
+        let name = document.createElement("h5");
+        name.classList.add("card-title");
+        name.textContent = sneaker.name;
+        cardBody.appendChild(name);
+
+        let releaseDate = document.createElement("p");
+        releaseDate.classList.add("card-text");
+        releaseDate.textContent = "Release Date: " + sneaker.releaseDate;
+        cardBody.appendChild(releaseDate);
+
+        let price = document.createElement("p");
+        price.classList.add("card-text");
+        price.textContent = "Price: $" + sneaker.price;
+        cardBody.appendChild(price);
+
+
+        card.appendChild(cardBody);
+        cardContainer.appendChild(card);
+    });
+
+    // Append the table to the document body or any other container element
+
 
 </script>
 
-</div>
+
 </body>
 </html>

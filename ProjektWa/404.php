@@ -1,4 +1,5 @@
 <?php
+session_start();
 echo file_get_contents("header.php");
 echo file_get_contents("footer.php");
 ?>
@@ -16,7 +17,7 @@ echo file_get_contents("footer.php");
 </head>
 <body>
 <div class="container">
-<h1>GG nemáš přístup</h1>
+<h1>Pro přístup je potřeba se přihlásit</h1>
 </div>
 </body>
 </html>
